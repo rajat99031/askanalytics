@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 import joblib
 
-titanic = pd.read_csv(r"C:\TEST\PJ\titanic.csv")
+titanic = pd.read_csv(r"askanalytics/titanic.csv")
 
 encode_dict = {
     "Sex_female": {'Male': 0, 'Female': 1},
@@ -20,7 +20,7 @@ st.write(
 st.dataframe(titanic.head())
 
 def model_pred(PClass,Sex_female, age_encoded, Fare_M2):
-    with open("C:\TEST\PJ\Logistic_model.pkl", 'rb') as file:
+    with open(r"askanalytics/Logistic_model.pkl", 'rb') as file:
         reg_model = joblib.load(file)
 
         Sex_female = encode_dict['Sex_female'][Sex_female]
